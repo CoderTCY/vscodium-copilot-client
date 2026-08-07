@@ -1,0 +1,137 @@
+{
+  "name": "vscodium-copilot-client",
+  "displayName": "VSCodium Copilot Client",
+  "description": "Fill-in-the-middle inline completions (ghost text) against the GitHub Copilot proxy API, plus a Copilot CLI MCP bridge so the terminal copilot CLI can open diffs in VSCodium.",
+  "version": "0.2.2",
+  "publisher": "local",
+  "license": "MIT",
+  "private": true,
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./out/extension.js",
+  "l10n": "./l10n",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "copilotClient.checkStatus",
+        "title": "%copilotClient.checkStatus%"
+      },
+      {
+        "command": "copilotClient.actions",
+        "title": "%copilotClient.actions%"
+      },
+      {
+        "command": "copilotClient.refreshToken",
+        "title": "%copilotClient.refreshToken%"
+      },
+      {
+        "command": "copilotClient.refreshQuota",
+        "title": "%copilotClient.refreshQuota%"
+      },
+      {
+        "command": "copilotClient.toggleEnabled",
+        "title": "%copilotClient.toggleEnabled%"
+      },
+      {
+        "command": "copilotClient.cli.acceptDiff",
+        "title": "%copilotClient.cli.acceptDiff%",
+        "category": "Copilot CLI",
+        "icon": "$(check)",
+        "enablement": "copilotClient.cli.hasActiveDiff"
+      },
+      {
+        "command": "copilotClient.cli.rejectDiff",
+        "title": "%copilotClient.cli.rejectDiff%",
+        "category": "Copilot CLI",
+        "icon": "$(close)",
+        "enablement": "copilotClient.cli.hasActiveDiff"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "copilotClient.cli.acceptDiff",
+          "group": "navigation@1",
+          "when": "copilotClient.cli.hasActiveDiff"
+        },
+        {
+          "command": "copilotClient.cli.rejectDiff",
+          "group": "navigation@2",
+          "when": "copilotClient.cli.hasActiveDiff"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "VSCodium Copilot Client",
+      "properties": {
+        "copilotClient.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "%config.enabled%"
+        },
+        "copilotClient.statusBarDisplay": {
+          "type": "string",
+          "enum": [
+            "percent",
+            "amount"
+          ],
+          "enumDescriptions": [
+            "%config.statusBarDisplay.percent%",
+            "%config.statusBarDisplay.amount%"
+          ],
+          "default": "percent",
+          "description": "%config.statusBarDisplay%"
+        },
+        "copilotClient.model": {
+          "type": "string",
+          "default": "",
+          "description": "%config.model%"
+        },
+        "copilotClient.prefixTokens": {
+          "type": "number",
+          "default": 1800,
+          "description": "%config.prefixTokens%"
+        },
+        "copilotClient.suffixTokens": {
+          "type": "number",
+          "default": 500,
+          "description": "%config.suffixTokens%"
+        },
+        "copilotClient.maxTokens": {
+          "type": "number",
+          "default": 2048,
+          "description": "%config.maxTokens%"
+        },
+        "copilotClient.cliMcp.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "%config.cliMcp.enabled%"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "bun build src/extension.ts --outdir out --external vscode --target node --format cjs --sourcemap",
+    "watch": "bun build src/extension.ts --outdir out --external vscode --target node --format cjs --sourcemap --watch",
+    "typecheck": "bunx tsc --noEmit",
+    "test": "bun test"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.1.2",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.6.0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "express": "^5.2.1",
+    "zod": "^4.4.3"
+  }
+}
