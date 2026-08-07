@@ -35,6 +35,5 @@
   "VSCodium Copilot Client: {0}": "VSCodium Copilot Client：{0}",
   "VSCodium Copilot Client: could not update toggle: {0}": "VSCodium Copilot Client：无法更新开关状态：{0}",
   "Remaining {0}%": "剩余 {0}%",
-  "Remaining {0}": "剩余 {0}",
-  "VSCodium Copilot Client: Copilot CLI MCP server failed to start: {0}": "VSCodium Copilot Client：Copilot CLI MCP 服务器启动失败：{0}"
+  "Remaining {0}": "剩余 {0}"
 }

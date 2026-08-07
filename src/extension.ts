@@ -6,7 +6,6 @@ import { postProcess } from './postprocess';
 import { CompletionQuota, getCompletionQuota } from './quota';
 import { getCopilotAccess, resetCopilotAccess } from './token';
 import { truncatePrefix, truncateSuffix } from './truncate';
-import { CopilotCliMcpContrib } from './mcp/contrib';
 
 /**
  * How often the status-bar quota indicator refetches the remaining completions
@@ -37,18 +36,6 @@ export function activate(context: vscode.ExtensionContext): void {
 	context.subscriptions.push(quotaItem);
 
 	loadToggleState(context.globalState);
-
-	// Optional Copilot CLI MCP integration: lets the terminal `copilot` CLI
-	// discover this editor and drive diff reviews through it. Failure here must
-	// never break the FIM completions.
-	if (vscode.workspace.getConfiguration('copilotClient').get<boolean>('cliMcp.enabled', true)) {
-		try {
-			context.subscriptions.push(new CopilotCliMcpContrib());
-			log('Copilot CLI MCP integration enabled');
-		} catch (err) {
-			log(`Copilot CLI MCP init failed: ${(err as Error).message}`);
-		}
-	}
 
 	context.subscriptions.push(
 		vscode.languages.registerInlineCompletionItemProvider('*', provider),

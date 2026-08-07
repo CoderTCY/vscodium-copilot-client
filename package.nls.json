@@ -4,8 +4,6 @@
   "copilotClient.refreshToken": "VSCodium Copilot Client: Refresh token",
   "copilotClient.refreshQuota": "VSCodium Copilot Client: Refresh remaining quota",
   "copilotClient.toggleEnabled": "VSCodium Copilot Client: Toggle completions",
-  "copilotClient.cli.acceptDiff": "VSCodium Copilot Client: Accept diff",
-  "copilotClient.cli.rejectDiff": "VSCodium Copilot Client: Reject diff",
   "config.enabled": "Enable or disable inline completions.",
   "config.statusBarDisplay": "What the status bar shows next to the Copilot icon: percent remaining, or the remaining/total amount.",
   "config.statusBarDisplay.percent": "Remaining percentage.",
@@ -13,6 +11,5 @@
   "config.model": "Engine model id used for completions. Empty = first completion model from the API.",
   "config.prefixTokens": "Approximate token budget for the prefix (text before cursor).",
   "config.suffixTokens": "Approximate token budget for the suffix (text after cursor).",
-  "config.maxTokens": "Maximum number of tokens the model may generate.",
-  "config.cliMcp.enabled": "Expose an MCP server for the terminal Copilot CLI, advertised via ~/.copilot/ide lock files."
+  "config.maxTokens": "Maximum number of tokens the model may generate."
 }

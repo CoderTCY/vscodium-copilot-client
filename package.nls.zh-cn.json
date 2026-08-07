@@ -4,8 +4,6 @@
   "copilotClient.refreshToken": "VSCodium Copilot Client：刷新令牌",
   "copilotClient.refreshQuota": "VSCodium Copilot Client：刷新剩余用量",
   "copilotClient.toggleEnabled": "VSCodium Copilot Client：开关补全",
-  "copilotClient.cli.acceptDiff": "VSCodium Copilot Client：接受差异",
-  "copilotClient.cli.rejectDiff": "VSCodium Copilot Client：拒绝差异",
   "config.enabled": "启用或禁用内联补全。",
   "config.statusBarDisplay": "Copilot 图标旁状态栏显示的内容：剩余百分比，或剩余/总用量。",
   "config.statusBarDisplay.percent": "剩余百分比。",
@@ -13,6 +11,5 @@
   "config.model": "用于补全的引擎模型 ID。留空 = 使用 API 返回的第一个补全模型。",
   "config.prefixTokens": "前缀（光标前文本）的近似 token 预算。",
   "config.suffixTokens": "后缀（光标后文本）的近似 token 预算。",
-  "config.maxTokens": "模型可生成的最大 token 数量。",
-  "config.cliMcp.enabled": "为终端 Copilot CLI 暴露 MCP 服务器，通过 ~/.copilot/ide 锁文件对外广播。"
+  "config.maxTokens": "模型可生成的最大 token 数量。"
 }
