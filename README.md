@@ -11,6 +11,11 @@ VSCodium through MCP, so `copilot` can open diff views here for you to review an
 > any required Copilot subscription. The Copilot endpoints used here are **private /
 > undocumented** and may change, be restricted, or stop working without notice.
 
+## Project status
+
+This project is unmaintained. No support, compatibility updates, security fixes, or response
+to issues and pull requests should be expected. Forks and independent maintenance are welcome.
+
 ## Features
 
 - Ghost-text inline completions on every editor (prefix + suffix FIM)
