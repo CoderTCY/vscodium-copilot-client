@@ -4,7 +4,7 @@
   "description": "Fill-in-the-middle inline completions (ghost text) against the GitHub Copilot proxy API, plus a Copilot CLI MCP bridge so the terminal copilot CLI can open diffs in VSCodium.",
   "version": "0.2.2",
   "publisher": "local",
-  "license": "MIT",
+  "license": "CC0-1.0",
   "private": true,
   "engines": {
     "vscode": "^1.85.0"

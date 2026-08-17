@@ -5,9 +5,11 @@ GitHub Copilot completion proxy directly — the same approach as copilot.vim / 
 but as a native VS Code extension. It also bridges the terminal **Copilot CLI** into
 VSCodium through MCP, so `copilot` can open diff views here for you to review and approve.
 
-> ⚠️ **Disclaimer**: the Copilot endpoints used here are **private / undocumented** and may
-> change or be restricted at any time. This is a personal-use project, not an official
-> GitHub product, and it requires a GitHub account with an active Copilot subscription.
+> ⚠️ **Disclaimer**: This project is independent and not affiliated with GitHub. It does not
+> grant any rights to use GitHub, GitHub Copilot, their APIs, endpoints, trademarks, or
+> services. Users are responsible for complying with applicable GitHub terms and maintaining
+> any required Copilot subscription. The Copilot endpoints used here are **private /
+> undocumented** and may change, be restricted, or stop working without notice.
 
 ## Features
 
